@@ -46,6 +46,25 @@ public class ClassString {
 		String strChars2 = new String(chars, 1, 3); // Начало диапазона и количество используемых символов
 		System.out.println(strChars2);
 
+		// Операторы + и += для String
+		System.out.println("\nОператоры + и += для String");
+		String strA = "Сим";
+		String strB = "Салабим";
+		String strC = strA + "-" + strB;
+		System.out.println(strC);
+
+		strA += "-" + strB;
+		System.out.println(strA);
+
+		// Форматирование строк
+		System.out.println("\nФорматирование строк");
+		String strFormat = "Ул. %1s, дом %2s, %3d кв.";
+		String strStreet = "Гребенщикова";
+		String strHome = "13";
+		int flat = 201;
+		String strAddress = String.format(strFormat, strStreet, strHome, flat);
+		System.out.println(strAddress);
+
 	}
 
 }
