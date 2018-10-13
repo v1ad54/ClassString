@@ -297,18 +297,23 @@ public class ClassString {
 		System.out.print("public int offsetByCodePoints(int index, int codePointOffset) : ");
 		System.out.println("Абракадабра Симсалабим".offsetByCodePoints(3, 5));
 
-		// public boolean regionMatches (int thisStart, String string, int start, int
+		// public boolean regionMatches(int thisStart, String string, int start, int
 		// length)
 		// Метод сравнивает указанную часть строки с другой частью строки. Нужно задать
 		// индекс начала диапазон строки вызывающего объекта класса String. Строка для
 		// сравнивания передаётся в параметре string. Индекс символа, начиная с которого
 		// нужно выполнять сравнение передаётся в параметре start, а длина сравниваемой
 		// подстроки в параметре length.
+		System.out.print("public boolean regionMatches(int thisStart, String string, int start, int length) : ");
+		System.out.println("Абракадабра Симсалабим".regionMatches(12, "Сим", 0, 3));
 
-		// public boolean regionMatches (boolean ignoreCase, int thisStart, String
+		// public boolean regionMatches(boolean ignoreCase, int thisStart, String
 		// string, int start, int length)
 		// Перегруженная версия. Метод сравнивает указанную часть строки с другой частью
 		// строки, игнорируя регистр.
+		System.out.print(
+				"public boolean regionMatches(boolean ignoreCase, int thisStart, String string, int start, int length) : ");
+		System.out.println("Абракадабра Симсалабим".regionMatches(true, 12, "сим", 0, 3));
 
 		// public String replace(CharSequence target, CharSequence replacement) и другие
 		// перегруженные версии
@@ -316,6 +321,82 @@ public class ClassString {
 		System.out.print("public String replace(CharSequence target, CharSequence replacement) : ");
 		System.out.println("кит".replaceAll("и", "о"));
 
-	}
+		// public String replaceFirst(String regularExpression, String replacement)
+		// Удаляет первые символы при помощи регулярного выражения.
+		// Например, если нужно удалить нули в начале чисел 001, 007, 000024, то можно
+		// использовать такой вызов:
+		System.out.print("public String replaceFirst(String regularExpression, String replacement) : ");
+		System.out.println("004505".replaceFirst("^0*", ""));
 
+		// public String[] split(String regularExpression)
+		// public String[] split(String regex, int limit) - имеет limit - ограничение
+		// возвращаемых результатов
+		// Разбивает строку на массив из слов.
+		System.out.println("public String[] split(String regularExpression) : ");
+		String str = "У попа была собака, он ее любил";
+		for (String str_split : str.split("[\\s,]+")) {
+			System.out.println(str_split);
+		}
+
+		// public boolean startsWith(String prefix)
+		// Проверяет, начинается ли строка символами prefix с начала строки
+		System.out.print("public boolean startsWith(String prefix) : ");
+		System.out.println("Абракадабра Симсалабим".startsWith("А"));
+
+		// public boolean startsWith(String prefix, int start)
+		// Проверяет, начинается ли заданная строка символами prefix с указанной
+		// позиции.
+		System.out.print("public boolean startsWith(String prefix, int start) : ");
+		System.out.println("Абракадабра Симсалабим".startsWith("С", 12));
+
+		// public CharSequence subSequence (int start, int end)
+		// Аналогичен методу substring(), но может использоваться для CharSequence.
+
+		// public String substring(int start) и другие перегруженные версии.
+		// Создаёт новую последовательность/строку с символами из данной строки начиная
+		// с позиции start до конца строки/заканчивая символом с позиции end. Новая
+		// строка содержит символы от start до end - 1, поэтому берём на один символ
+		// больше.
+		System.out.print("public String substring(int start) : ");
+		System.out.println(str.substring(12, 18));
+
+		// public char[] toCharArray()
+		// Копирует символы в этой строке в массив символов. Тот же результат можно
+		// получить через метод getChars(). Документация не рекомендует использовать
+		// данный метод, предлагая метод charAt().
+
+		// public String toLowerCase() и другие перегруженные версии
+		// Преобразовывает строку в нижний регистр. Преобразованием управляет заданный
+		// по умолчанию региональный язык.
+		System.out.print("public String toLowerCase() : ");
+		System.out.println("КОТ".toLowerCase());
+
+		// public String toString ()
+		// Возвращает строку. Для самой строки, которая сама уже является строкой,
+		// возвращать строку бессмысленно (о, как я загнул). Но на самом деле этот метод
+		// очень полезен для других классов.
+
+		// public String toUpperCase()
+		// Преобразовывает строку в верхний регистр. Преобразованием управляет заданный
+		// по умолчанию региональный язык.
+		System.out.print("public String toUpperCase() : ");
+		System.out.println("кот".toUpperCase());
+
+		// public String trim()
+		// Удаляет пробелы в начале и в конце строки.
+		System.out.print("public String trim() : ");
+		System.out.println("    123".trim());
+
+		// public static String valueOf(long value) и другие перегруженные версии
+		// Конвертирует содержимое (числа, объекты, символы, массивы символов) в строку.
+		System.out.print("public static String valueOf(long value) : ");
+		System.out.println(String.valueOf(12345));
+
+		// Сравнение строк
+		String str_1 = new String("Абракадабра");
+		String str_2 = new String("Абракадабра");
+		System.out.println("operator == : " + (str_1 == str_2));
+		System.out.println("method equals : " + str_1.equals(str_2));
+
+	}
 }
